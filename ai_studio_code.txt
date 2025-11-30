@@ -1,0 +1,25 @@
+# Generate audio script for this chapter
+script_prompt = AUDIO_SCRIPT_TEMPLATE.format(chapter_title=chapter.get("title", f"Chapter {chapter_number}"))
+audio_script = ai_generate_json("gemini-2.5-flash", script_prompt)
+audio_script["ebookId"] = ebook_id
+script_id = add_doc("audio_scripts", audio_script)
+
+# Grant compliance: log the creation as a deliverable (internal)
+grant_log_id = add_doc("grant_logs", {
+    "eventType": "ebook_created",
+    "ebookId": ebook_id,
+    "metadata": {
+        "chapter_number": chapter_number,
+        "theme": myth_theme,
+        "affiliate_hook": affiliate_hook
+    }
+})
+
+# Notify affiliates subtly (optional broadcast)
+send_broadcast(
+    f"New Lore: {chapter.get('title','Chapter '+str(chapter_number))}",
+    "A new chapter has manifested. Share to unlock mythic badges.",
+    {"ebookId": ebook_id, "scriptId": script_id}
+)
+
+return {"ebook_id": ebook_id, "script_id": script_id, "grant_log_id": grant_log_id}
