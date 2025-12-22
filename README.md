@@ -168,6 +168,23 @@ Midnight-Myth-Audio-/
     └── session_progress.json
 ```
 
+## Important Notes
+
+### Concurrency
+
+The current implementation uses file-based JSON storage, which is suitable for single-user/single-process scenarios. For production environments with concurrent access requirements, consider:
+
+- Implementing file locking mechanisms
+- Using a proper database (PostgreSQL, MongoDB, etc.)
+- Adding queue-based processing for write operations
+
+### API Keys
+
+For production use with actual Gemini AI generation:
+- Set the `GOOGLE_API_KEY` environment variable
+- Keep your API keys secure and never commit them to version control
+- Use the `.env` file for local development (already gitignored)
+
 ## License
 
 GNU General Public License v3.0 - See LICENSE file for details

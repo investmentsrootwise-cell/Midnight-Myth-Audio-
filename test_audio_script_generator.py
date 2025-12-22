@@ -168,6 +168,7 @@ def run_all_tests():
     
     passed = 0
     failed = 0
+    failures = []
     
     for test in tests:
         try:
@@ -175,14 +176,25 @@ def run_all_tests():
             passed += 1
         except AssertionError as e:
             print(f"✗ {test.__name__} failed: {e}")
+            failures.append((test.__name__, "AssertionError", str(e)))
             failed += 1
         except Exception as e:
             print(f"✗ {test.__name__} error: {e}")
+            failures.append((test.__name__, "Exception", str(e)))
             failed += 1
     
     print("\n" + "="*60)
     print(f"Test Results: {passed} passed, {failed} failed")
     print("="*60 + "\n")
+    
+    # Print detailed failure information
+    if failures:
+        print("Failure Details:")
+        for test_name, error_type, error_msg in failures:
+            print(f"\n  Test: {test_name}")
+            print(f"  Type: {error_type}")
+            print(f"  Message: {error_msg}")
+        print()
     
     # Cleanup
     if os.path.exists('data'):

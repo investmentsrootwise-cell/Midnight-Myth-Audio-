@@ -5,6 +5,7 @@ Generates audio scripts for chapters with Gemini AI, tracks progress, and manage
 
 import os
 import json
+import uuid
 from datetime import datetime
 from typing import Dict, Any, Optional
 
@@ -133,8 +134,14 @@ class AudioScriptGenerator:
             
         Returns:
             Document ID
+            
+        Note:
+            This implementation uses file-based storage. For production use with
+            concurrent access, consider using a proper database or implementing
+            file locking mechanisms.
         """
-        doc_id = f"{collection}_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}"
+        # Generate unique ID using UUID to avoid collisions
+        doc_id = f"{collection}_{uuid.uuid4().hex[:16]}"
         
         # Create data directory if it doesn't exist
         os.makedirs('data', exist_ok=True)
