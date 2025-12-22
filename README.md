@@ -32,7 +32,7 @@ The founder and mythic architect of Midnight Myth Audio, Robert spearheaded the 
 - Facebook: [Alexandereagleman453](https://www.facebook.com/Alexandereagleman453)
 - Instagram: [@alexandereagleman453](https://www.instagram.com/alexandereagleman453)
 - TikTok: [@robertstokes37](https://tiktok.com/@robertstokes37)
-- Threads: [@Alexanderegleman453](https://www.threads.net/@Alexanderegleman453)
+- Threads: [@Alexandereagleman453](https://www.threads.net/@Alexandereagleman453)
 - Discord: [Alexanderegleman4539949](https://www.discord.gg/Alexanderegleman4539949)
 - YouTube: [@robertstokes9300](https://www.youtube.com/@robertstokes9300)
 
