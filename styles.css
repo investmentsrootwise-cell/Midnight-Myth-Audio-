@@ -1,0 +1,73 @@
+/* Midnight Myth Audio - Shared Styles */
+/* CSS Variables for consistent theming and better maintainability */
+:root {
+    /* Color Palette */
+    --color-primary: #a855f7;
+    --color-primary-light: #c084fc;
+    --color-primary-dark: #6b21a8;
+    --color-primary-darker: #4a0e4e;
+    --color-secondary: #81167a;
+    
+    /* Background Colors */
+    --bg-dark-1: #0f0319;
+    --bg-dark-2: #1a0b2e;
+    --bg-dark-3: #2d1b4e;
+    --bg-dark-4: #1e1432;
+    
+    /* Text Colors */
+    --text-primary: #e0e0e0;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #6b21a8 0%, #a855f7 100%);
+    --gradient-primary-hover: linear-gradient(135deg, #7c2d9e 0%, #b865ff 100%);
+    --gradient-background: linear-gradient(135deg, #0f0319 0%, #1a0b2e 50%, #2d1b4e 100%);
+    --gradient-header: linear-gradient(135deg, #4a0e4e 0%, #81167a 100%);
+    --gradient-text: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 5px 15px rgba(168, 85, 247, 0.4);
+    --shadow-md: 0 10px 25px rgba(168, 85, 247, 0.6);
+    --shadow-lg: 0 20px 60px rgba(168, 85, 247, 0.3);
+    --shadow-dark: 0 10px 40px rgba(0, 0, 0, 0.5);
+    
+    /* Border Radius */
+    --radius-sm: 5px;
+    --radius-md: 10px;
+    --radius-lg: 15px;
+    --radius-xl: 20px;
+    --radius-full: 50px;
+    --radius-circle: 50%;
+    
+    /* Transitions */
+    --transition-fast: all 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--gradient-background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Utility Classes */
+.gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Links */
+a {
+    transition: var(--transition-fast);
+}
