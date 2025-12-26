@@ -57,6 +57,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
+    /* Note: Page-specific CSS files extend these base styles with layout properties */
 }
 
 /* Utility Classes */
